@@ -37,4 +37,9 @@ ehthumbs.db
 Thumbs.db
 
 # o motivo pela qual queria ter um gitignore :)
-..vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
