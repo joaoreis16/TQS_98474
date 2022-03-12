@@ -37,4 +37,4 @@ ehthumbs.db
 Thumbs.db
 
 # o motivo pela qual queria ter um gitignore :)
-.vscode/
+..vscode/
