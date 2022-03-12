@@ -1,1 +1,4 @@
-# TQS_98474
+# Aulas Práticas de TQS
+
+João Reis <br>
+98474
