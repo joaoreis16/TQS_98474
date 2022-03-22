@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="geocoding.AddressResolverTest" time="0.339" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="geocoding.AddressResolverTest" time="0.35" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PT"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire/surefirebooter15292842337587148381.jar /home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire 2022-03-20T02-36-31_363-jvmRun1 surefire12622447151784823788tmp surefire_010666575840340862411tmp"/>
+    <property name="sun.java.command" value="/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire/surefirebooter491961979563527246.jar /home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire 2022-03-20T02-41-56_563-jvmRun1 surefire18032501336786982521tmp surefire_01896622935356752430tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/test-classes:/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/classes:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/home/joao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/home/joao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/home/joao/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/home/joao/.m2/repository/org/mockito/mockito-core/4.3.1/mockito-core-4.3.1.jar:/home/joao/.m2/repository/net/bytebuddy/byte-buddy/1.12.7/byte-buddy-1.12.7.jar:/home/joao/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.7/byte-buddy-agent-1.12.7.jar:/home/joao/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/joao/.m2/repository/org/mockito/mockito-junit-jupiter/4.3.1/mockito-junit-jupiter-4.3.1.jar:/home/joao/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/joao/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/joao/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/joao/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/joao/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/home/joao/.m2/repository/junit/junit/4.10/junit-4.10.jar:/home/joao/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire/surefirebooter15292842337587148381.jar"/>
+    <property name="surefire.real.class.path" value="/home/joao/3ano/TQS_98474/lab2/lab2_2/gs-mockForHttpClient/target/surefire/surefirebooter491961979563527246.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.14+9-Ubuntu-0ubuntu2.20.04"/>
     <property name="user.name" value="joao"/>
@@ -57,6 +57,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="whenBadCoordidates_thenReturnNoValidAddress" classname="geocoding.AddressResolverTest" time="0.299"/>
-  <testcase name="whenResolveAlboiGps_returnCaisAlboiAddress" classname="geocoding.AddressResolverTest" time="0.028"/>
+  <testcase name="whenBadCoordidates_thenReturnNoValidAddress" classname="geocoding.AddressResolverTest" time="0.308"/>
+  <testcase name="whenResolveAlboiGps_returnCaisAlboiAddress" classname="geocoding.AddressResolverTest" time="0.031"/>
 </testsuite>
