@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AddressResolverIT {
 
+    
     private AddressResolver resolver = new AddressResolver( new TqsBasicHttpClient() );
 
     @Test
