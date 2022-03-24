@@ -93,6 +93,6 @@ This file is used to implement all the properties needed, usually to connect wit
 
 ### e) the sample project demonstrates three test strategies to assess an API (C, D and E) developed with SpringBoot. Which are the main/key differences?
 
-The test C) mocks all service implementation and the access to API.
-The test D) encapsulates all web application beans and makes them available for testing.
+The test C) mocks all service implementation and the access to API. <br>
+The test D) encapsulates all web application beans and makes them available for testing. <br>
 the test E) test all components of the project. It will access the API by direct request and not use any mock.
