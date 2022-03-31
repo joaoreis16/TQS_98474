@@ -2,7 +2,6 @@ package tqs.cars.Model;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,13 +14,9 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long carId;
 
-    @Column(name = "maker", nullable = true)
     private String maker;
-
-    @Column(name = "model", nullable = true)
     private String model;
 
     public Car() {}

@@ -16,10 +16,10 @@ import tqs.cars.Model.Car;
 import tqs.cars.Service.CarManagerService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("")
 public class CarController {
 
-    @Autowired
+    @Autowired(required = true)
     private CarManagerService carManagerService;
 
     @PostMapping("/newcar")
