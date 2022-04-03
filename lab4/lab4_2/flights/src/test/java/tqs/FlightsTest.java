@@ -35,6 +35,7 @@ import java.util.Map;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -44,7 +45,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 
+import io.github.bonigarcia.seljup.SeleniumJupiter;
 
+
+@ExtendWith(SeleniumJupiter.class)
 public class FlightsTest {
 
   private WebDriver driver;
@@ -64,7 +68,7 @@ public class FlightsTest {
   }
 
   @Test
-  public void flightsTest() {
+  public void flightsTest(WebDriver driver) {
     driver.get("https://blazedemo.com/");
     driver.manage().window().setSize(new Dimension(1840, 1053));
     driver.findElement(By.name("fromPort")).click();
