@@ -1,43 +1,22 @@
 package tqs;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.JavascriptExecutor;
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
+import static io.github.bonigarcia.seljup.BrowserType.CHROME;
+import io.github.bonigarcia.seljup.DockerBrowser;
 
 @ExtendWith(SeleniumJupiter.class)
-public class FlightsTest {
-
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-
-  @BeforeEach
-  public void setUp() {
-    driver = new ChromeDriver();
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
-  }
-
-  @AfterEach
-  public void tearDown() {
-    driver.quit();
-  }
+public class AppTest {
 
   @Test
-  public void flightsTest(WebDriver driver) {
+  public void flightsTest(@DockerBrowser(type = CHROME) RemoteWebDriver driver) {
     driver.get("https://blazedemo.com/");
     driver.manage().window().setSize(new Dimension(1840, 1053));
     driver.findElement(By.name("fromPort")).click();

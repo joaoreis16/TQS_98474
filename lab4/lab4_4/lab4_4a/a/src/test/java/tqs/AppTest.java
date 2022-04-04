@@ -16,9 +16,12 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import static org.hamcrest.CoreMatchers.startsWith;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 @ExtendWith(SeleniumJupiter.class)
-public class FlightsTest {
+public class AppTest {
 
   private WebDriver driver;
   private Map<String, Object> vars;
@@ -36,8 +39,17 @@ public class FlightsTest {
     driver.quit();
   }
 
+
+  // teste encontrado num tutorial da internet
   @Test
-  public void flightsTest(WebDriver driver) {
+  void testWithHeadless(HtmlUnitDriver driver) {
+      driver.get("http://www.seleniumhq.org/");
+      assertThat(driver.getTitle(), startsWith("Selenium"));
+  }
+
+
+  @Test
+  public void flightsTest(HtmlUnitDriver driver) {
     driver.get("https://blazedemo.com/");
     driver.manage().window().setSize(new Dimension(1840, 1053));
     driver.findElement(By.name("fromPort")).click();
