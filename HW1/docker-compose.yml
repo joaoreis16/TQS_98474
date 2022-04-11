@@ -1,0 +1,16 @@
+services:
+#    frontend:
+#        build: ./frontend
+#        ports: 
+#            - 8000:8000
+#        container_name: frontend
+#        restart: always
+#        depends_on:
+#            - backend
+
+    backend:
+        build: ./backend/covid
+        ports:
+            - 8080:8080
+        container_name: backend
+        restart: always
