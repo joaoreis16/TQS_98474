@@ -17,7 +17,6 @@ export class TopCardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWorldData();
-    console.log("AQUI 3 "+ this.world_info);
    
   }
 
@@ -25,10 +24,8 @@ export class TopCardsComponent implements OnInit {
   getWorldData(): void {
      this.service.getWorldData().subscribe((info) => {
       this.world_info = info;
-      console.log("AQUI 2 "+ this.world_info);
     });
 
-    console.log("AQUI 1 "+ this.world_info);
   }
 
 }

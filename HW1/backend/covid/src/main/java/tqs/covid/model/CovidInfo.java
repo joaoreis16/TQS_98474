@@ -17,12 +17,15 @@ public class CovidInfo {
     private long new_recovered;
     private long population;
     private long serious_critical;
+    private Double test_Percentage;
+    private Double infection_Risk;
 
 
     public CovidInfo() {
     }
 
-    public CovidInfo(String id, String country, String continent, String iso, String TwoLetterSymbol, long rank, long total_cases, long new_cases, long total_deaths, long new_deaths, long total_recovered, long new_recovered, long population, long serious_critical) {
+
+    public CovidInfo(String id, String country, String continent, String iso, String TwoLetterSymbol, long rank, long total_cases, long new_cases, long total_deaths, long new_deaths, long total_recovered, long new_recovered, long population, long serious_critical, Double test_Percentage, Double infection_Risk) {
         this.id = id;
         this.country = country;
         this.continent = continent;
@@ -37,6 +40,25 @@ public class CovidInfo {
         this.new_recovered = new_recovered;
         this.population = population;
         this.serious_critical = serious_critical;
+        this.test_Percentage = test_Percentage;
+        this.infection_Risk = infection_Risk;
+    }
+
+
+    public Double getTest_Percentage() {
+        return this.test_Percentage;
+    }
+
+    public void setTest_Percentage(Double test_Percentage) {
+        this.test_Percentage = test_Percentage;
+    }
+
+    public Double getInfection_Risk() {
+        return this.infection_Risk;
+    }
+
+    public void setInfection_Risk(Double infection_Risk) {
+        this.infection_Risk = infection_Risk;
     }
 
 
@@ -154,6 +176,7 @@ public class CovidInfo {
         this.serious_critical = serious_critical;
     }
 
+
     @Override
     public String toString() {
         return "{" +
@@ -171,6 +194,8 @@ public class CovidInfo {
             ", new_recovered='" + getNew_recovered() + "'" +
             ", population='" + getPopulation() + "'" +
             ", serious_critical='" + getSerious_critical() + "'" +
+            ", test_Percentage='" + getTest_Percentage() + "'" +
+            ", infection_Risk='" + getInfection_Risk() + "'" +
             "}";
     }
 }

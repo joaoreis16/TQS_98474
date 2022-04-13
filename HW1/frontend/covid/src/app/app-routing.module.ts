@@ -8,23 +8,15 @@ export const Approutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: '/world', pathMatch: 'full' },
       {
         path: 'world',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
-      {
-        path: 'about',
-        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
       },
       {
         path: 'info',
         loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
       }
     ]
-  },
-  {
-    path: '**',
-    redirectTo: '/starter'
   }
 ];

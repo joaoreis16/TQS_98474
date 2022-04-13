@@ -8,6 +8,9 @@ export interface CovidInfo {
     rank: number,
     population: number,
     serious_critical: number,
+    test_Percentage: number,
+    infection_Risk: number,
+
 
     // cases
     total_cases: number,

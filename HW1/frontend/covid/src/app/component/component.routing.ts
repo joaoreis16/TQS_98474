@@ -14,15 +14,25 @@ import { CountryComponent } from './country/country.component';
 export const ComponentsRoutes: Routes = [
 	{
 		path: '',
-		children: [
+		children: [			
+			{
+				path: '',
+				component: CountryComponent
+			},
+			{
+				path: ':iso',
+				component: CountryComponent
+			},
+
+
+
+
+			
 			{
 				path: 'table',
 				component: TableComponent
 			},
-			{
-				path: 'country',
-				component: CountryComponent
-			},
+
 			{
 				path: 'card',
 				component: CardsComponent

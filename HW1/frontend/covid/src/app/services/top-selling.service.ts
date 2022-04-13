@@ -13,7 +13,7 @@ export class TopSellingService {
   
     getCountriesData() : Observable<CovidInfo[]> {
         console.log(">> all info of each country api request");
-        return this.http.get<CovidInfo[]>(environment.API_URL+ "/info/eachcoutry");
+        return this.http.get<CovidInfo[]>(environment.API_URL+ "/info/top10");
     }
   
 

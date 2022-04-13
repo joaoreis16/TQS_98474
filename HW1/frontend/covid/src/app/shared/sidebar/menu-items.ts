@@ -11,14 +11,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/info/country',
-    title: 'Specific Country',
+    path: '/info/',
+    title: 'By Country',
     icon: 'bi bi-flag-fill',
     class: '',
     extralink: false,
     submenu: []
   },
-
+/* 
   {
     path: '/info/badges',
     title: 'Badges',
@@ -82,5 +82,5 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  }
+  } */
 ];

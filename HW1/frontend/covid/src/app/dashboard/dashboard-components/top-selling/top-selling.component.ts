@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidInfo } from '../../../interfaces/CovidInfo';
 import { TopSellingService } from '../../../services/top-selling.service';
-import {Product,TopSelling} from './top-selling-data';
 
 @Component({
   selector: 'app-top-selling',
@@ -16,18 +15,17 @@ export class TopSellingComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTop10();
-    console.log("AQUI 3 "+ this.all_countries_info);
-   
   }
 
 
   getTop10(): void {
      this.service.getCountriesData().subscribe((info) => {
       this.all_countries_info = info;
-      console.log("AQUI 2 "+ JSON.stringify(this.all_countries_info));
     });
+  }
 
-    console.log("AQUI 1 "+ this.all_countries_info);
+  redirect(iso: string): void {
+    window.location.href = "/info/" + iso;
   }
 
 

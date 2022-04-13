@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="io.book.BookTest" time="0.174" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/test-classes:/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/classes:/home/joao/.m2/repository/io/cucumber/cucumber-java/7.2.3/cucumber-java-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-core/7.2.3/cucumber-core-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-gherkin/7.2.3/cucumber-gherkin-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.2.3/cucumber-gherkin-messages-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/home/joao/.m2/repository/io/cucumber/tag-expressions/4.1.0/tag-expressions-4.1.0.jar:/home/joao/.m2/repository/io/cucumber/cucumber-expressions/15.0.1/cucumber-expressions-15.0.1.jar:/home/joao/.m2/repository/io/cucumber/datatable/7.2.3/datatable-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-plugin/7.2.3/cucumber-plugin-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/docstring/7.2.3/docstring-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/home/joao/.m2/repository/io/cucumber/ci-environment/8.1.0/ci-environment-8.1.0.jar:/home/joao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/joao/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.2.3/cucumber-junit-platform-engine-7.2.3.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/home/joao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:/home/joao/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Europe/Lisbon"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="PT"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/surefire/surefirebooter3625754070511510779.jar /home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/surefire 2022-04-13T23-18-22_550-jvmRun1 surefire10721585102915280240tmp surefire_011203887041488439599tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/test-classes:/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/classes:/home/joao/.m2/repository/io/cucumber/cucumber-java/7.2.3/cucumber-java-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-core/7.2.3/cucumber-core-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-gherkin/7.2.3/cucumber-gherkin-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.2.3/cucumber-gherkin-messages-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/home/joao/.m2/repository/io/cucumber/tag-expressions/4.1.0/tag-expressions-4.1.0.jar:/home/joao/.m2/repository/io/cucumber/cucumber-expressions/15.0.1/cucumber-expressions-15.0.1.jar:/home/joao/.m2/repository/io/cucumber/datatable/7.2.3/datatable-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/cucumber-plugin/7.2.3/cucumber-plugin-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/docstring/7.2.3/docstring-7.2.3.jar:/home/joao/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/home/joao/.m2/repository/io/cucumber/ci-environment/8.1.0/ci-environment-8.1.0.jar:/home/joao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/joao/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.2.3/cucumber-junit-platform-engine-7.2.3.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/home/joao/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite/1.8.2/junit-platform-suite-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-api/1.8.2/junit-platform-suite-api-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.8.2/junit-platform-suite-engine-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.8.2/junit-platform-suite-commons-1.8.2.jar:/home/joao/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar:/home/joao/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/home/joao/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/joao"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-02-08"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books/target/surefire/surefirebooter3625754070511510779.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.14.1+1-Ubuntu-0ubuntu1.20.04"/>
+    <property name="user.name" value="joao"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.4.0-107-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/joao/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="11.0.14.1"/>
+    <property name="user.dir" value="/home/joao/3ano/TQS_98474/lab5/lab5_2/books"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="11.0.14.1+1-Ubuntu-0ubuntu1.20.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="Books - Search books by publication year" classname="Books" time="0.079">
+    <system-out><![CDATA[
+Scenario: Search books by publication year                                                                    &amp#27;[90m# io/book/book.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32ma book with the title &amp#27;[0m&amp#27;[32m&amp#27;[1m'One good book'&amp#27;[0m&amp#27;[32m, written by &amp#27;[0m&amp#27;[32m&amp#27;[1m'Anonymous'&amp#27;[0m&amp#27;[32m, published in &amp#27;[0m&amp#27;[32m&amp#27;[1m2013-03-14&amp#27;[0m                &amp#27;[90m# io.book.BookSteps.addNewBook(java.lang.String,java.lang.String,java.time.LocalDateTime)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32manother book with the title &amp#27;[0m&amp#27;[32m&amp#27;[1m'Some other book'&amp#27;[0m&amp#27;[32m, written by &amp#27;[0m&amp#27;[32m&amp#27;[1m'Tim Tomson'&amp#27;[0m&amp#27;[32m, published in &amp#27;[0m&amp#27;[32m&amp#27;[1m2014-08-23&amp#27;[0m         &amp#27;[90m# io.book.BookSteps.addAnotherBook(java.lang.String,java.lang.String,java.time.LocalDateTime)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32manother book with the title &amp#27;[0m&amp#27;[32m&amp#27;[1m'How to cook a dino'&amp#27;[0m&amp#27;[32m, written by &amp#27;[0m&amp#27;[32m&amp#27;[1m'Fred Flintstone'&amp#27;[0m&amp#27;[32m, published in &amp#27;[0m&amp#27;[32m&amp#27;[1m2012-01-01&amp#27;[0m &amp#27;[90m# io.book.BookSteps.addAnotherBook(java.lang.String,java.lang.String,java.time.LocalDateTime)&amp#27;[0m
+3
+Book [title=One good book, author=Anonymous, published=Thu Mar 14 00:00:00 WET 2013]
+Book [title=Some other book, author=Tim Tomson, published=Sat Aug 23 01:00:00 WEST 2014]
+Book [title=How to cook a dino, author=Fred Flintstone, published=Sun Jan 01 00:00:00 WET 2012]
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mthe customer searches for books published between &amp#27;[0m&amp#27;[32m&amp#27;[1m2013-01-01&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m2014-12-31&amp#27;[0m                            &amp#27;[90m# io.book.BookSteps.setSearchParameters(java.time.LocalDateTime,java.time.LocalDateTime)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32m&amp#27;[0m&amp#27;[32m&amp#27;[1m2&amp#27;[0m&amp#27;[32m books should have been found&amp#27;[0m                                                                         &amp#27;[90m# io.book.BookSteps.verifyAmountOfBooksFound(int)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mBook &amp#27;[0m&amp#27;[32m&amp#27;[1m1&amp#27;[0m&amp#27;[32m should have the title &amp#27;[0m&amp#27;[32m&amp#27;[1m'Some other book'&amp#27;[0m                                                          &amp#27;[90m# io.book.BookSteps.verifyBookAtPosition(int,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mBook &amp#27;[0m&amp#27;[32m&amp#27;[1m2&amp#27;[0m&amp#27;[32m should have the title &amp#27;[0m&amp#27;[32m&amp#27;[1m'One good book'&amp#27;[0m                                                            &amp#27;[90m# io.book.BookSteps.verifyBookAtPosition(int,java.lang.String)&amp#27;[0m
+]]></system-out>
+  </testcase>
+</testsuite>
