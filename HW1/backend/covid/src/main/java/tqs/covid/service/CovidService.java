@@ -2,6 +2,7 @@ package tqs.covid.service;
 
 import org.springframework.stereotype.Service;
 
+import tqs.covid.cache.Cache;
 import tqs.covid.model.CovidInfo;
 import tqs.covid.model.LastSixMonths;
 
@@ -33,9 +34,12 @@ public class CovidService {
     private static final String KEY =  "fb44e7ccbcmshc1d51179e45f1c7p12742cjsnfacd51188b90";
 
     private HashMap<String, String> map_isoCode;
+    private Cache cache;
 
 
     public CovidService() throws IOException, InterruptedException  {
+        // change the time to live here (add as argument in the constructor)
+        this.cache = new Cache();
         this.map_isoCode = this.getMapCountryISO();
     }
 
@@ -43,6 +47,14 @@ public class CovidService {
     ////////////////////////////////////////////////// API REQUESTS //////////////////////////////////////////////////
 
     public CovidInfo getWorldData() throws IOException, InterruptedException {
+
+        String cacheKey = "world";
+
+        Object world = cache.get( cacheKey );
+        if (world != null) {
+            log.info(">> [CACHE] Getting world data.");
+            return (CovidInfo) world;
+        }
 
         log.info(">> Getting world data.");
 
@@ -74,13 +86,24 @@ public class CovidService {
         Double test_Percentage = Double.parseDouble( data.get("Test_Percentage").toString() );
         Double infection_Risk = Double.parseDouble( data.get("Infection_Risk").toString() );
 
-        log.info("[SUCCESS]");
+        CovidInfo world_data = new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk);
 
-        return new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk);
+        cache.add(cacheKey, world_data);
+        log.info("[CACHE SAVE]");  
+
+        return world_data;
     }
 
 
     public CovidInfo getCountryData(String iso_code, String country_name) throws IOException, InterruptedException {
+
+        String cacheKey = iso_code +"_"+ country_name;
+
+        Object country_data = cache.get( cacheKey );
+        if (country_data != null) {
+            log.info(">> [CACHE] Getting {} data.", country_name );
+            return (CovidInfo) country_data;
+        }
 
         log.info(">> Getting {} covid-19 data.", country_name);
 
@@ -112,16 +135,27 @@ public class CovidService {
         Double test_Percentage = Double.parseDouble( data.get("Test_Percentage").toString() );
         Double infection_Risk = Double.parseDouble( data.get("Infection_Risk").toString() );
 
-        log.info("[SUCCESS]");
+        CovidInfo new_country = new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk); 
 
-        return new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk);
+        cache.add(cacheKey, new_country);
+        log.info("[CACHE SAVE]");
+
+        return new_country;
     }
 
 
 
     public List<CovidInfo> getTop10() throws IOException, InterruptedException {
 
-        log.info(">> Getting all information for every countries.");
+        String cacheKey = "top10";
+
+        Object lst = cache.get( cacheKey );
+        if (lst != null) {
+            log.info(">> [CACHE] Getting Top10 countries data");
+            return (List<CovidInfo>) lst;
+        }
+
+        log.info(">> Getting Top10 countries most affected by covid.");
         ArrayList<CovidInfo> lst_countries = new ArrayList<>();
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -164,13 +198,22 @@ public class CovidService {
 
         }
 
-        log.info("[SUCCESS]");
+        cache.add(cacheKey, lst_countries);
+        log.info("[CACHE SAVE]");
         
         return lst_countries;
     }
 
 
     public List<LastSixMonths> getLastSixMonthsData(String iso) throws IOException, InterruptedException, ParseException, JSONException {
+
+        String cacheKey = iso;
+
+        Object cache_data = cache.get( cacheKey );
+        if (cache_data != null) {
+            log.info(">> [CACHE] Getting {} last six month data.", this.map_isoCode.get(iso));
+            return (List<LastSixMonths>) cache_data;
+        }
 
         log.info(">> Getting {} covid-19 data is the last six months.", iso);
         ArrayList<LastSixMonths> lst = new ArrayList<>();
@@ -209,26 +252,19 @@ public class CovidService {
 
         }
 
-        log.info("[SUCCESS]");
+        cache.add(cacheKey, lst);
+        log.info("[CACHE SAVE]");
+
         return lst;
     }
 
-    ////////////////////////////////////////////////// ANOTHER FUNCTIONS //////////////////////////////////////////////////
-
-
-    public String getCountryByISO(String iso_code) {
-        if (this.map_isoCode.containsKey(iso_code)){
-            return this.map_isoCode.get(iso_code);
-        } 
-        return null;
-    }
-
-
     public HashMap<String, String> getMapCountryISO() throws IOException, InterruptedException {
+
+        // this request doesn't need to be saved in cache because he only occurs once
 
         HashMap<String,String> map = new HashMap<>();
 
-        log.info(">> Creating HashMap< IsoCode, CountryName> ");
+        log.info(">> Creating HashMap< ISO, CountryName > ");
 
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(API_URL + "npm-covid-data/countries-name-ordered"))
@@ -250,11 +286,18 @@ public class CovidService {
             map.put(iso, countryname);
         }
 
-        log.info("[SUCCESS]");
-
         return map;
     }
 
+    ////////////////////////////////////////////////// ANOTHER FUNCTIONS //////////////////////////////////////////////////
+
+
+    public String getCountryByISO(String iso_code) {
+        if (this.map_isoCode.containsKey(iso_code)){
+            return this.map_isoCode.get(iso_code);
+        } 
+        return null;
+    }
 
     public String getISObyName(String countryname) {
 
@@ -267,6 +310,11 @@ public class CovidService {
             return map_countryname.get(countryname);
         } 
         return null; 
+    }
+
+
+    public String getCacheStats() {
+        return cache.toString();
     }
 
     

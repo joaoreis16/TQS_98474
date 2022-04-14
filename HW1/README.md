@@ -1,12 +1,45 @@
 
+# HW1: Mid-term Assignment
 
-## o que falta fazer
+## 1. Objective
 
-1. Implement a cache2to reduce the number of external accesses. Whenever a request is made to a remote API, you should cache the results; if the same (remote) data is requested(i.e., a duplicate request)then you should use the cached values. The cacheshould define a time-to-livepolicy and produce some basic statistics about its operation (count of requests, hits/misses). All data related to the cacheoperations is not required to be persisted[you mayuse a memory data structure, like a HashMap].
+Develop a multi-layer web application, in Spring Boot, supplied with automated tests.
 
-2. Your API should also provide an endpoint to get basic statistics on the use of the (internal) cache.
 
-3. testes
+## 2. Project scope
 
-4. sonarcloud
+This application provides details about COVID-19 incidence data worldwide and for a given country/territory.
+
+## 3. Technologies stack
+
+| Component | Tecnology |
+| :---: | :---: |
+| frontend | Angular |  
+| backend| Spring Boot | 
+| API | [VACCOVID - coronavirus, vaccine and treatment tracker](https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/) | 
+
+## 4. How to run
+
+```
+# in the root folder (HW1)
+
+cd backend/covid
+./mvnw spring-boot:run
+
+
+# in another terminal in the root folder too (HW1)
+
+cd frontend/covid
+ng serve
+```
+
+## Authors
+
+João Reis, 98474 <br>
+github: [joaoreis16](https://github.com/joaoreis16)
+<br>
+<br>
+Testes e Qualidade de Software
+<br>
+Universidade de Aveiro, 2021
 

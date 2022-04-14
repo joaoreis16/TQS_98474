@@ -32,7 +32,6 @@ public class CovidController {
         return service.getWorldData();
     }
 
-
     @GetMapping("{iso}")
     public CovidInfo getCountryData(@PathVariable String iso) throws IOException, InterruptedException {
         String countryname = service.getCountryByISO(iso);
@@ -40,12 +39,10 @@ public class CovidController {
         return service.getCountryData(iso, countryname);
     }
 
-
     @GetMapping("top10")
     public List<CovidInfo> getCountriesData() throws IOException, InterruptedException {
         return service.getTop10();
     }
-
 
     @GetMapping("last6months/{iso}")
     public List<LastSixMonths> getLastMonthsData(@PathVariable String iso) throws IOException, InterruptedException, ParseException, JSONException {
@@ -57,6 +54,11 @@ public class CovidController {
         String iso = service.getISObyName(countryname);
         if (iso == null) return null;
         return "{ \"iso\" : \""+ iso +"\"}";
+    }
+
+    @GetMapping("cache")
+    public String getCacheStats() {
+        return service.getCacheStats();
     }
     
     
