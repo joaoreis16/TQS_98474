@@ -1,16 +1,16 @@
 
-# HW1: Mid-term Assignment
+## HW1: Mid-term Assignment
 
-## 1. Objective
+### 1. Objective
 
 Develop a multi-layer web application, in Spring Boot, supplied with automated tests.
 
 
-## 2. Project scope
+### 2. Project scope
 
 This application provides details about COVID-19 incidence data worldwide and for a given country/territory.
 
-## 3. Technologies stack
+### 3. Technologies stack
 
 | Component | Tecnology |
 | :---: | :---: |
@@ -18,7 +18,7 @@ This application provides details about COVID-19 incidence data worldwide and fo
 | backend| Spring Boot | 
 | API | [VACCOVID - coronavirus, vaccine and treatment tracker](https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/) | 
 
-## 4. How to run
+### 4. How to run
 
 ```
 # in the root folder (HW1)
@@ -33,7 +33,7 @@ cd frontend/covid
 ng serve
 ```
 
-## Authors
+### Authors
 
 João Reis, 98474 <br>
 github: [joaoreis16](https://github.com/joaoreis16)
