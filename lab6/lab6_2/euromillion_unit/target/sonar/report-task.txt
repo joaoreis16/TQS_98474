@@ -1,0 +1,6 @@
+projectKey=euromillion_unit
+serverUrl=http://127.0.0.1:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://127.0.0.1:9000/dashboard?id=euromillion_unit
+ceTaskId=AYAlYKZ8Wm2O26jdOzS3
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYAlYKZ8Wm2O26jdOzS3
