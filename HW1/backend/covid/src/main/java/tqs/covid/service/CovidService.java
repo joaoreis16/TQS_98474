@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import tqs.covid.cache.Cache;
 import tqs.covid.model.CovidInfo;
 import tqs.covid.model.LastSixMonths;
+import tqs.covid.model.Request;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,17 +30,15 @@ public class CovidService {
 
     private static final Logger log = LoggerFactory.getLogger(CovidService.class);
 
-    private static final String API_URL = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/";
-    private static final String HOST =  "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com";
-    private static final String KEY =  "fb44e7ccbcmshc1d51179e45f1c7p12742cjsnfacd51188b90";
-
     private HashMap<String, String> map_isoCode;
     private Cache cache;
+    private Request api;
 
 
     public CovidService() throws IOException, InterruptedException  {
         // change the time to live here (add as argument in the constructor)
         this.cache = new Cache();
+        this.api = new Request();
         this.map_isoCode = this.getMapCountryISO();
     }
 
@@ -56,16 +55,10 @@ public class CovidService {
             return (CovidInfo) world;
         }
 
-        log.info(">> Getting world data.");
+        log.info(">> [REQUEST] Getting world data.");
 
-        HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(API_URL + "npm-covid-data/world"))
-            .header("X-RapidAPI-Host", HOST)
-            .header("X-RapidAPI-Key", KEY)
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray data_array = new JSONArray(response.body());
+        String response = this.api.requestTo("npm-covid-data/world");
+        JSONArray data_array = new JSONArray(response);
         JSONObject data = (JSONObject) data_array.get(0);
 
         String id = data.get("id").toString();
@@ -101,20 +94,14 @@ public class CovidService {
 
         Object country_data = cache.get( cacheKey );
         if (country_data != null) {
-            log.info(">> [CACHE] Getting {} data.", country_name );
+            log.info(">> [CACHE] Getting {} covid-19 data.", country_name );
             return (CovidInfo) country_data;
         }
 
-        log.info(">> Getting {} covid-19 data.", country_name);
+        log.info(">> [REQUEST] Getting {} covid-19 data.", country_name);
 
-        HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(API_URL + "npm-covid-data/country-report-iso-based/" + country_name + "/" + iso_code))
-            .header("X-RapidAPI-Host", HOST)
-            .header("X-RapidAPI-Key", KEY)
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray data_array = new JSONArray(response.body());
+        String response = this.api.requestTo("npm-covid-data/country-report-iso-based/" + country_name + "/" + iso_code);
+        JSONArray data_array = new JSONArray(response);
         JSONObject data = (JSONObject) data_array.get(0);
 
         String id = data.get("id").toString();
@@ -151,21 +138,15 @@ public class CovidService {
 
         Object lst = cache.get( cacheKey );
         if (lst != null) {
-            log.info(">> [CACHE] Getting Top10 countries data");
+            log.info(">> [CACHE] Getting Top10 countries most affected by covid.");
             return (List<CovidInfo>) lst;
         }
 
-        log.info(">> Getting Top10 countries most affected by covid.");
+        log.info(">> [REQUEST] Getting Top10 countries most affected by covid.");
         ArrayList<CovidInfo> lst_countries = new ArrayList<>();
 
-        HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(API_URL + "npm-covid-data/"))
-            .header("X-RapidAPI-Host", HOST)
-            .header("X-RapidAPI-Key", KEY)
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray data_array = new JSONArray(response.body());
+        String response = this.api.requestTo("npm-covid-data/");
+        JSONArray data_array = new JSONArray(response);
 
         for (Object c : data_array) {
 
@@ -215,17 +196,11 @@ public class CovidService {
             return (List<LastSixMonths>) cache_data;
         }
 
-        log.info(">> Getting {} covid-19 data is the last six months.", iso);
+        log.info(">> [REQUEST] Getting {} last six month data.", iso);
         ArrayList<LastSixMonths> lst = new ArrayList<>();
-
-        HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(API_URL + "covid-ovid-data/sixmonth/" + iso))
-            .header("X-RapidAPI-Host", HOST)
-            .header("X-RapidAPI-Key", KEY)
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray data_array = new JSONArray(response.body());
+        
+        String response = this.api.requestTo("covid-ovid-data/sixmonth/" + iso);
+        JSONArray data_array = new JSONArray(response);
 
         for (Object c : data_array) {
 
@@ -264,16 +239,10 @@ public class CovidService {
 
         HashMap<String,String> map = new HashMap<>();
 
-        log.info(">> Creating HashMap< ISO, CountryName > ");
+        log.info(">> [REQUEST] Creating HashMap< ISO, CountryName > ");
 
-        HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(API_URL + "npm-covid-data/countries-name-ordered"))
-            .header("X-RapidAPI-Host", HOST)
-            .header("X-RapidAPI-Key", KEY)
-            .method("GET", HttpRequest.BodyPublishers.noBody())
-            .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        JSONArray data = new JSONArray(response.body());
+        String response = this.api.requestTo("npm-covid-data/countries-name-ordered");
+        JSONArray data = new JSONArray(response);
 
         for (Object o : data){
             JSONObject country = (JSONObject) o;

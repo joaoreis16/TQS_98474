@@ -1,5 +1,6 @@
 package tqs.covid.cache;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,14 +32,15 @@ public class Cache {
 
     //////////////////////// SOME NEEDED METHODS ////////////////////////
     
-    public void add( String key, Object object ){
+    public void add( String key, Object object ) {
         cache.put(key, object);
         time2live.put(key, System.currentTimeMillis() + max_time );
     }
 
-    public boolean clean(String key){
+    public boolean clean(String key) {
         if ( cache.containsKey(key) ){
             cache.remove(key);
+            time2live.remove(key);
             return true;
         }
         return false;
@@ -59,6 +61,25 @@ public class Cache {
         return null;
     }
 
+    public void clear() {
+        cache.clear();
+        time2live.clear();
+    }
+
+    public int size() {
+
+        ArrayList<String> keys2remove = new ArrayList<>();
+
+        for (String key : cache.keySet()) {
+            if ( time2live.get(key) <= System.currentTimeMillis() ) {
+                keys2remove.add(key);
+            }
+        }
+
+        for (String key : keys2remove) clean(key);
+
+        return this.cache.size();
+    }
 
 
     //////////////////////// GETTERS & SETTERS ////////////////////////
@@ -69,11 +90,6 @@ public class Cache {
 
     public void setMax_time(long max_time) {
         this.max_time = max_time * 1000;
-    }
-
-
-    public int getCacheSize() {
-        return this.cache.size();
     }
 
     public int getRequests() {

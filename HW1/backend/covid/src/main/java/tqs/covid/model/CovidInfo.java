@@ -180,22 +180,22 @@ public class CovidInfo {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", country='" + getCountry() + "'" +
-            ", continent='" + getContinent() + "'" +
-            ", iso='" + getIso() + "'" +
-            ", TwoLetterSymbol='" + getTwoLetterSymbol() + "'" +
-            ", rank='" + getRank() + "'" +
-            ", total_cases='" + getTotal_cases() + "'" +
-            ", new_cases='" + getNew_cases() + "'" +
-            ", total_deaths='" + getTotal_deaths() + "'" +
-            ", new_deaths='" + getNew_deaths() + "'" +
-            ", total_recovered='" + getTotal_recovered() + "'" +
-            ", new_recovered='" + getNew_recovered() + "'" +
-            ", population='" + getPopulation() + "'" +
-            ", serious_critical='" + getSerious_critical() + "'" +
-            ", test_Percentage='" + getTest_Percentage() + "'" +
-            ", infection_Risk='" + getInfection_Risk() + "'" +
+            " \"id\":'" + getId() + "'" +
+            ", \"country\":'" + getCountry() + "'" +
+            ", \"continent\":'" + getContinent() + "'" +
+            ", \"iso\":'" + getIso() + "'" +
+            ", \"TwoLetterSymbol\":'" + getTwoLetterSymbol() + "'" +
+            ", \"rank\":'" + getRank() + "'" +
+            ", \"total_cases\":'" + getTotal_cases() + "'" +
+            ", \"new_cases\":'" + getNew_cases() + "'" +
+            ", \"total_deaths\":'" + getTotal_deaths() + "'" +
+            ", \"new_deaths\":'" + getNew_deaths() + "'" +
+            ", \"total_recovered\":'" + getTotal_recovered() + "'" +
+            ", \"new_recovered\":'" + getNew_recovered() + "'" +
+            ", \"population\":'" + getPopulation() + "'" +
+            ", \"serious_critical\":'" + getSerious_critical() + "'" +
+            ", \"test_Percentage\":'" + getTest_Percentage() + "'" +
+            ", \"infection_Risk\":'" + getInfection_Risk() + "'" +
             "}";
     }
 }

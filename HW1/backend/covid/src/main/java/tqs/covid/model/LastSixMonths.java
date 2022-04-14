@@ -127,17 +127,17 @@ public class LastSixMonths {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", symbol='" + getSymbol() + "'" +
-            ", country='" + getCountry() + "'" +
-            ", continent='" + getContinent() + "'" +
-            ", date='" + getDate() + "'" +
-            ", total_cases='" + getTotal_cases() + "'" +
-            ", new_cases='" + getNew_cases() + "'" +
-            ", total_deaths='" + getTotal_deaths() + "'" +
-            ", new_deaths='" + getNew_deaths() + "'" +
-            ", total_tests='" + getTotal_tests() + "'" +
-            ", new_tests='" + getNew_tests() + "'" +
+            " \"id\":'" + getId() + "'" +
+            ", \"symbol\":'" + getSymbol() + "'" +
+            ", \"country\":'" + getCountry() + "'" +
+            ", \"continent\":'" + getContinent() + "'" +
+            ", \"date\":'" + getDate() + "'" +
+            ", \"total_cases\":'" + getTotal_cases() + "'" +
+            ", \"new_cases\":'" + getNew_cases() + "'" +
+            ", \"total_deaths\":'" + getTotal_deaths() + "'" +
+            ", \"new_deaths\":'" + getNew_deaths() + "'" +
+            ", \"total_tests\":'" + getTotal_tests() + "'" +
+            ", \"new_tests\":'" + getNew_tests() + "'" +
             "}";
     }
     

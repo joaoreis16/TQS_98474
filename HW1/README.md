@@ -27,7 +27,7 @@ cd backend/covid
 ./mvnw spring-boot:run
 
 
-# in another terminal in the root folder too (HW1)
+# in another terminal in the root folder (HW1)
 
 cd frontend/covid
 ng serve
