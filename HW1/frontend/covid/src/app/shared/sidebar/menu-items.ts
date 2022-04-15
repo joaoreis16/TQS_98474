@@ -18,15 +18,15 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-/* 
   {
-    path: '/info/badges',
-    title: 'Badges',
-    icon: 'bi bi-patch-check',
+    path: '/cache',
+    title: 'Cache',
+    icon: 'bi bi-clock-history',
     class: '',
     extralink: false,
     submenu: []
   },
+  /* 
   {
     path: '/info/buttons',
     title: 'Button',

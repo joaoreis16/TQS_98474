@@ -33,7 +33,7 @@ cd frontend/covid
 ng serve
 ```
 
-### Authors
+### 5. Authors
 
 João Reis, 98474 <br>
 github: [joaoreis16](https://github.com/joaoreis16)

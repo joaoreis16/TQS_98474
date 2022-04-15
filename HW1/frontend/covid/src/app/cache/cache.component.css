@@ -1,0 +1,36 @@
+
+#card {
+    position:relative;
+
+}
+
+#circle::before {
+    height: 180px; 
+    width: 180px; 
+    background-color: #fff; 
+    border-radius: 50%; 
+    display: block; 
+    margin: auto; 
+    margin-top: -6em;
+
+    position: relative;
+
+    content:'';
+
+    /* left:50%;
+    transform: translate(-50%,-10%); */
+}
+
+#circle:after {
+    height:100%;
+    width:100%;
+    background:white;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+
+#card, #circle::before{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

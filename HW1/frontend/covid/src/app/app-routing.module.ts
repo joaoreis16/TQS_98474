@@ -16,6 +16,10 @@ export const Approutes: Routes = [
       {
         path: 'info',
         loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
+      },
+      {
+        path: 'cache',
+        loadChildren: () => import('./cache/cache.module').then(m => m.CacheModule)
       }
     ]
   }
