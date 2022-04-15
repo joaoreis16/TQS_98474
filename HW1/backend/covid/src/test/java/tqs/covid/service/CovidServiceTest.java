@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 public class CovidServiceTest {
-
+/* 
     @Mock
     private Request api;
 
@@ -54,7 +54,7 @@ public class CovidServiceTest {
         assertEquals(country_info.toString(), info.toString());
        
     }
-
+ */
 
     // methods to test
     // 
