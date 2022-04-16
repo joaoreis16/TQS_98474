@@ -181,21 +181,21 @@ public class CovidInfo {
     public String toString() {
         return "{" +
             " \"id\":'" + getId() + "'" +
-            ", \"country\":'" + getCountry() + "'" +
-            ", \"continent\":'" + getContinent() + "'" +
-            ", \"iso\":'" + getIso() + "'" +
+            ", \"Country\":'" + getCountry() + "'" +
+            ", \"Continent\":'" + getContinent() + "'" +
+            ", \"ThreeLetterSymbol\":'" + getIso() + "'" +
             ", \"TwoLetterSymbol\":'" + getTwoLetterSymbol() + "'" +
             ", \"rank\":'" + getRank() + "'" +
-            ", \"total_cases\":'" + getTotal_cases() + "'" +
-            ", \"new_cases\":'" + getNew_cases() + "'" +
-            ", \"total_deaths\":'" + getTotal_deaths() + "'" +
-            ", \"new_deaths\":'" + getNew_deaths() + "'" +
-            ", \"total_recovered\":'" + getTotal_recovered() + "'" +
-            ", \"new_recovered\":'" + getNew_recovered() + "'" +
-            ", \"population\":'" + getPopulation() + "'" +
-            ", \"serious_critical\":'" + getSerious_critical() + "'" +
-            ", \"test_Percentage\":'" + getTest_Percentage() + "'" +
-            ", \"infection_Risk\":'" + getInfection_Risk() + "'" +
+            ", \"TotalCases\":'" + getTotal_cases() + "'" +
+            ", \"NewCases\":'" + getNew_cases() + "'" +
+            ", \"TotalDeaths\":'" + getTotal_deaths() + "'" +
+            ", \"NewDeaths\":'" + getNew_deaths() + "'" +
+            ", \"TotalRecovered\":'" + getTotal_recovered() + "'" +
+            ", \"NewRecovered\":'" + getNew_recovered() + "'" +
+            ", \"Population\":'" + getPopulation() + "'" +
+            ", \"Serious_Critical\":'" + getSerious_critical() + "'" +
+            ", \"Test_Percentage\":'" + getTest_Percentage() + "'" +
+            ", \"Infection_Risk\":'" + getInfection_Risk() + "'" +
             "}";
     }
 }

@@ -10,9 +10,7 @@ import java.text.ParseException;
 public class LastSixMonthsTest {
 
     @Test
-    void getsTest() throws ParseException {
-
-        // , Long total_cases, Long new_cases, Long total_deaths, Long new_deaths, Long total_tests, Long new_tests) {
+    void getLastSixMonthsObjectTest() throws ParseException {
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
         Date date = formatter.parse("2022-04-14");

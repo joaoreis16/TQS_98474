@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CovidInfoTest {
 
     @Test
-    void getsTest(){
+    void getCovidInfoObjectTest(){
         
         CovidInfo info = new CovidInfo("1", "Portugal", "Europe", "PRT", "pt", 31, 111, 2, 555, 3, 222, 6, 10000000, 42, 76.8, 34.2);
 

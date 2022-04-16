@@ -33,7 +33,26 @@ cd frontend/covid
 ng serve
 ```
 
-### 5. Authors
+### 5. How to run tests
+
+```
+# before run the test, configure the path of ChromeWebDriver file
+
+PATH=$(getconf PATH)
+echo 'export PATH=$PATH:/home/joao/Transferências' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+```
+mvn clean test
+
+# with jacoco report
+
+mvn clean jacoco:prepare-agent install jacoco:report
+
+```
+
+### 6. Authors
 
 João Reis, 98474 <br>
 github: [joaoreis16](https://github.com/joaoreis16)

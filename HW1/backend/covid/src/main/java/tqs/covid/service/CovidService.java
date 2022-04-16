@@ -8,10 +8,6 @@ import tqs.covid.model.LastSixMonths;
 import tqs.covid.model.Request;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,16 +26,14 @@ public class CovidService {
 
     private static final Logger log = LoggerFactory.getLogger(CovidService.class);
 
+    private Cache cache = new Cache(); // change the time to live here (add as argument in the constructor)
+    private Request api = new Request();
+
     private HashMap<String, String> map_isoCode;
-    private Cache cache;
-    private Request api;
 
 
-    public CovidService() throws IOException, InterruptedException  {
-        // change the time to live here (add as argument in the constructor)
-        this.cache = new Cache();
-        this.api = new Request();
-        this.map_isoCode = this.getMapCountryISO();
+    public void setAPI(Request api) {
+        this.api = api;
     }
 
 
@@ -64,7 +58,7 @@ public class CovidService {
         String id = data.get("id").toString();
         String country = data.get("Country").toString();
         String continent = data.get("Continent").toString();
-        String TwoLetterSymbol = data.get("TwoLetterSymbol").toString();
+        String TwoLetterSymbol = null;
         String iso = null;
         Long rank = Long.parseLong( data.get("rank").toString() );
 
@@ -122,7 +116,7 @@ public class CovidService {
         Double test_Percentage = Double.parseDouble( data.get("Test_Percentage").toString() );
         Double infection_Risk = Double.parseDouble( data.get("Infection_Risk").toString() );
 
-        CovidInfo new_country = new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk); 
+        CovidInfo new_country = new CovidInfo(id, country, continent, iso, TwoLetterSymbol, rank, total_cases, new_cases, total_deaths, new_deaths, total_recovered, new_recovered, population, serious_critical, test_Percentage, infection_Risk);
 
         cache.add(cacheKey, new_country);
         log.info("[CACHE SAVE]");
@@ -187,6 +181,8 @@ public class CovidService {
 
 
     public List<LastSixMonths> getLastSixMonthsData(String iso) throws IOException, InterruptedException, ParseException, JSONException {
+       
+        this.map_isoCode = this.getMapCountryISO();
 
         String cacheKey = iso;
 
@@ -235,7 +231,13 @@ public class CovidService {
 
     public HashMap<String, String> getMapCountryISO() throws IOException, InterruptedException {
 
-        // this request doesn't need to be saved in cache because he only occurs once
+        String cacheKey = "createMapCountryIso";
+
+        Object cache_data = cache.get( cacheKey );
+        if (cache_data != null) {
+            log.info(">> [CACHE] Getting {} HashMap< ISO, CountryName >");
+            return (HashMap<String, String>) cache_data;
+        }
 
         HashMap<String,String> map = new HashMap<>();
 
@@ -255,20 +257,30 @@ public class CovidService {
             map.put(iso, countryname);
         }
 
+        cache.add(cacheKey, map);
+        log.info("[CACHE SAVE]");
+
         return map;
     }
 
     ////////////////////////////////////////////////// ANOTHER FUNCTIONS //////////////////////////////////////////////////
 
 
-    public String getCountryByISO(String iso_code) {
+    public String getCountryByISO(String iso_code) throws IOException, InterruptedException {
+        this.map_isoCode = this.getMapCountryISO();
+
+        iso_code = iso_code.toLowerCase();
+        
         if (this.map_isoCode.containsKey(iso_code)){
             return this.map_isoCode.get(iso_code);
         } 
         return null;
     }
 
-    public String getISObyName(String countryname) {
+    public String getISObyName(String countryname) throws IOException, InterruptedException {
+        this.map_isoCode = this.getMapCountryISO();
+
+        countryname = countryname.toLowerCase();
 
         HashMap<String, String> map_countryname = new HashMap<>();
         for(HashMap.Entry<String, String> entry : this.map_isoCode.entrySet()){

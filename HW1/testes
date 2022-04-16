@@ -1,12 +1,6 @@
 
 
 
-A) Unit tests (suggestion: tests on the cache behavior; tests on "data validation", "converters" or “utils” in general, if applicable).
-
-B) Service level tests, with dependency isolation using mocks (suggestion: test your services in isolation from external data provider). 
-
-C) Integration tests on your API (suggestion: Spring Boot MockMvc and/or REST-Assured).
-
 D) Functional testing (on the web interface). Be sure to adopt a Behavior-driven approach (features with scenarios).
 
 E) Integration of analysis with Sonar Qube(or Codacy). Note: If the Git project is public, it can be analyzed in SonarCloud.

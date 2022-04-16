@@ -1,5 +1,6 @@
 package tqs.covid.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class LastSixMonths {
@@ -126,19 +127,22 @@ public class LastSixMonths {
 
     @Override
     public String toString() {
+
+        String date1 = new SimpleDateFormat("yyyy-MM-dd").format( this.getDate() );
+
         return "{" +
             " \"id\":'" + getId() + "'" +
             ", \"symbol\":'" + getSymbol() + "'" +
-            ", \"country\":'" + getCountry() + "'" +
-            ", \"continent\":'" + getContinent() + "'" +
-            ", \"date\":'" + getDate() + "'" +
+            ", \"Country\":'" + getCountry() + "'" +
+            ", \"Continent\":'" + getContinent() + "'" +
+            ", \"date\":'" + date1 + "'" +
             ", \"total_cases\":'" + getTotal_cases() + "'" +
             ", \"new_cases\":'" + getNew_cases() + "'" +
             ", \"total_deaths\":'" + getTotal_deaths() + "'" +
             ", \"new_deaths\":'" + getNew_deaths() + "'" +
             ", \"total_tests\":'" + getTotal_tests() + "'" +
             ", \"new_tests\":'" + getNew_tests() + "'" +
-            "}";
+            "}";                
     }
     
 }

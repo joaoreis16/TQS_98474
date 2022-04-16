@@ -13,8 +13,7 @@ public class Request {
     private static final String KEY =  "fb44e7ccbcmshc1d51179e45f1c7p12742cjsnfacd51188b90";
 
 
-    public Request() {
-    }
+    public Request() {}
 
     public String requestTo(String url) throws IOException, InterruptedException {
 

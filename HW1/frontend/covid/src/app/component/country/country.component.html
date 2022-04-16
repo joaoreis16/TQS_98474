@@ -26,11 +26,7 @@
 
 
 <div class="alert alert-danger" role="alert" *ngIf="not_found" style="display: inline-block">
-    <span> <i class="bi bi-exclamation-triangle-fill"></i> Country not found :/ Please, try another one  </span>
-</div>
-
-<div class="alert alert-danger" role="alert" *ngIf="not_equal" style="display: inline-block">
-    <span> <i class="bi bi-exclamation-triangle-fill"></i> ISO code and Country name do not match </span>
+    <h3 class="test" style="font-size: 1em;"> <i class="bi bi-exclamation-triangle-fill"></i> Country not found :/ Please, try another one  </h3>
 </div>
 
 <div class="container-fluid" *ngIf="info_country">
@@ -95,7 +91,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M208 175.1c-8.836 0-16 7.162-16 16c0 8.836 7.163 15.1 15.1 15.1s16-7.164 16-16C224 183.2 216.8 175.1 208 175.1zM272 239.1c-8.836 0-15.1 7.163-15.1 16c0 8.836 7.165 16 16 16s16-7.164 16-16C288 247.2 280.8 239.1 272 239.1zM509.2 275c-20.94-47.13-48.46-151.7-73.1-186.8C397.7 33.59 334.6 0 266.1 0H192C85.95 0 0 85.95 0 192c0 56.8 24.8 107.7 64 142.8L64 512h256l-.0044-64h63.99c35.34 0 63.1-28.65 63.1-63.1V320h31.98C503.1 320 518.6 296.2 509.2 275zM368 240h-12.12c-28.51 0-42.79 34.47-22.63 54.63l8.576 8.576c6.25 6.25 6.25 16.38 0 22.62c-3.125 3.125-7.219 4.688-11.31 4.688s-8.188-1.562-11.31-4.688l-8.576-8.576c-20.16-20.16-54.63-5.881-54.63 22.63V352c0 8.844-7.156 16-16 16s-16-7.156-16-16v-12.12c0-28.51-34.47-42.79-54.63-22.63l-8.576 8.576c-3.125 3.125-7.219 4.688-11.31 4.688c-4.096 0-8.188-1.562-11.31-4.688c-6.25-6.25-6.25-16.38 0-22.62l8.577-8.576C166.9 274.5 152.6 240 124.1 240H112c-8.844 0-16-7.156-16-16s7.157-16 16-16L124.1 208c28.51 0 42.79-34.47 22.63-54.63L138.2 144.8c-6.25-6.25-6.25-16.38 0-22.62s16.38-6.25 22.63 0L169.4 130.7c20.16 20.16 54.63 5.881 54.63-22.63V96c0-8.844 7.156-16 16-16S256 87.16 256 96v12.12c0 28.51 34.47 42.79 54.63 22.63l8.576-8.576c6.25-6.25 16.38-6.25 22.63 0s6.25 16.38 0 22.62L333.3 153.4C313.1 173.5 327.4 208 355.9 208l12.12-.0004c8.844 0 15.1 7.157 15.1 16S376.8 240 368 240z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold"> {{ info_country.new_cases | number:'1.0':'en-US'}} </h3>
+                                        <h4 class="mb-0 font-weight-bold"> {{ info_country.new_cases | number:'1.0':'en-US'}} </h4>
                                         <small class="text-muted fs-3">New Cases</small>
                                     </div>
                                 </div>
@@ -111,7 +107,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold"> {{ info_country.new_recovered | number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold"> {{ info_country.new_recovered | number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">New Recovered</small>
                                     </div>
                                 </div>
@@ -127,7 +123,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M368 128C368 172.4 342.6 211.5 304 234.4V256C304 273.7 289.7 288 272 288H175.1C158.3 288 143.1 273.7 143.1 256V234.4C105.4 211.5 79.1 172.4 79.1 128C79.1 57.31 144.5 0 223.1 0C303.5 0 368 57.31 368 128V128zM167.1 176C185.7 176 199.1 161.7 199.1 144C199.1 126.3 185.7 112 167.1 112C150.3 112 135.1 126.3 135.1 144C135.1 161.7 150.3 176 167.1 176zM280 112C262.3 112 248 126.3 248 144C248 161.7 262.3 176 280 176C297.7 176 312 161.7 312 144C312 126.3 297.7 112 280 112zM3.378 273.7C11.28 257.9 30.5 251.5 46.31 259.4L223.1 348.2L401.7 259.4C417.5 251.5 436.7 257.9 444.6 273.7C452.5 289.5 446.1 308.7 430.3 316.6L295.6 384L430.3 451.4C446.1 459.3 452.5 478.5 444.6 494.3C436.7 510.1 417.5 516.5 401.7 508.6L223.1 419.8L46.31 508.6C30.5 516.5 11.28 510.1 3.378 494.3C-4.526 478.5 1.881 459.3 17.69 451.4L152.4 384L17.69 316.6C1.881 308.7-4.526 289.5 3.378 273.7V273.7z"/></svg>
                                     </div>
                                     <div class="ms-4">
-                                        <h3 class="mb-0 font-weight-bold">{{ info_country.new_deaths | number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold">{{ info_country.new_deaths | number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">New Deaths</small>
                                     </div>
                                 </div>
@@ -145,7 +141,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M208 175.1c-8.836 0-16 7.162-16 16c0 8.836 7.163 15.1 15.1 15.1s16-7.164 16-16C224 183.2 216.8 175.1 208 175.1zM272 239.1c-8.836 0-15.1 7.163-15.1 16c0 8.836 7.165 16 16 16s16-7.164 16-16C288 247.2 280.8 239.1 272 239.1zM509.2 275c-20.94-47.13-48.46-151.7-73.1-186.8C397.7 33.59 334.6 0 266.1 0H192C85.95 0 0 85.95 0 192c0 56.8 24.8 107.7 64 142.8L64 512h256l-.0044-64h63.99c35.34 0 63.1-28.65 63.1-63.1V320h31.98C503.1 320 518.6 296.2 509.2 275zM368 240h-12.12c-28.51 0-42.79 34.47-22.63 54.63l8.576 8.576c6.25 6.25 6.25 16.38 0 22.62c-3.125 3.125-7.219 4.688-11.31 4.688s-8.188-1.562-11.31-4.688l-8.576-8.576c-20.16-20.16-54.63-5.881-54.63 22.63V352c0 8.844-7.156 16-16 16s-16-7.156-16-16v-12.12c0-28.51-34.47-42.79-54.63-22.63l-8.576 8.576c-3.125 3.125-7.219 4.688-11.31 4.688c-4.096 0-8.188-1.562-11.31-4.688c-6.25-6.25-6.25-16.38 0-22.62l8.577-8.576C166.9 274.5 152.6 240 124.1 240H112c-8.844 0-16-7.156-16-16s7.157-16 16-16L124.1 208c28.51 0 42.79-34.47 22.63-54.63L138.2 144.8c-6.25-6.25-6.25-16.38 0-22.62s16.38-6.25 22.63 0L169.4 130.7c20.16 20.16 54.63 5.881 54.63-22.63V96c0-8.844 7.156-16 16-16S256 87.16 256 96v12.12c0 28.51 34.47 42.79 54.63 22.63l8.576-8.576c6.25-6.25 16.38-6.25 22.63 0s6.25 16.38 0 22.62L333.3 153.4C313.1 173.5 327.4 208 355.9 208l12.12-.0004c8.844 0 15.1 7.157 15.1 16S376.8 240 368 240z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold">{{ info_country.total_cases | number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold">{{ info_country.total_cases | number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">Total Cases</small>
                                     </div>
                                 </div>
@@ -161,7 +157,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold">{{ info_country.total_recovered | number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold">{{ info_country.total_recovered | number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">Total Recovered</small>
                                     </div>
                                 </div>
@@ -177,7 +173,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M368 128C368 172.4 342.6 211.5 304 234.4V256C304 273.7 289.7 288 272 288H175.1C158.3 288 143.1 273.7 143.1 256V234.4C105.4 211.5 79.1 172.4 79.1 128C79.1 57.31 144.5 0 223.1 0C303.5 0 368 57.31 368 128V128zM167.1 176C185.7 176 199.1 161.7 199.1 144C199.1 126.3 185.7 112 167.1 112C150.3 112 135.1 126.3 135.1 144C135.1 161.7 150.3 176 167.1 176zM280 112C262.3 112 248 126.3 248 144C248 161.7 262.3 176 280 176C297.7 176 312 161.7 312 144C312 126.3 297.7 112 280 112zM3.378 273.7C11.28 257.9 30.5 251.5 46.31 259.4L223.1 348.2L401.7 259.4C417.5 251.5 436.7 257.9 444.6 273.7C452.5 289.5 446.1 308.7 430.3 316.6L295.6 384L430.3 451.4C446.1 459.3 452.5 478.5 444.6 494.3C436.7 510.1 417.5 516.5 401.7 508.6L223.1 419.8L46.31 508.6C30.5 516.5 11.28 510.1 3.378 494.3C-4.526 478.5 1.881 459.3 17.69 451.4L152.4 384L17.69 316.6C1.881 308.7-4.526 289.5 3.378 273.7V273.7z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold">{{ info_country.total_deaths | number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold">{{ info_country.total_deaths | number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">Total Deaths</small>
                                     </div>
                                 </div>
@@ -193,7 +189,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M528 224H272c-8.8 0-16 7.2-16 16v144H64V144c0-8.8-7.2-16-16-16H16c-8.8 0-16 7.2-16 16v352c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48h512v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V336c0-61.9-50.1-112-112-112zM136 96h126.1l27.6 55.2c5.9 11.8 22.7 11.8 28.6 0L368 51.8 390.1 96H512c8.8 0 16-7.2 16-16s-7.2-16-16-16H409.9L382.3 8.8C376.4-3 359.6-3 353.7 8.8L304 108.2l-19.9-39.8c-1.4-2.7-4.1-4.4-7.2-4.4H136c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm24 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64z"/></svg>
                                     </div>
                                     <div class="ms-3">
-                                        <h3 class="mb-0 font-weight-bold">{{ info_country.serious_critical| number:'1.0':'en-US'}}</h3>
+                                        <h4 class="mb-0 font-weight-bold">{{ info_country.serious_critical| number:'1.0':'en-US'}}</h4>
                                         <small class="text-muted fs-3">Intensitive care</small>
                                 </div>
                             </div>
@@ -208,21 +204,22 @@
 </div>
 
 
-<div  *ngIf="stats.length > 0">
-    <h2> {{ info_country.country }} Covid-19 stats in the last 6 months</h2>
+<div class=" align-items-center" *ngIf="stats.length > 0">
 
-    <div class="d-flex align-items-center" style="margin-top: 2em;">
+    <h3 class="test" style="font-size: 2em;"> {{ info_country.country }} Covid-19 stats in the last 6 months</h3>
+
+    <div class="d-flex" style="margin-top: 2em; ">
         <div class="col-lg-4"></div>
 
-        <div class="col-lg-1">
+        <div style="margin-left:3em">
             <button type="button" class="btn btn-info" (click)="appear('cases')">Cases</button>
         </div>
 
-        <div class="col-lg-1">
+        <div style="margin-left:2em">
             <button type="button" class="btn btn-danger" (click)="appear('death')">Deaths</button>
         </div>
 
-        <div class="col-lg-1">
+        <div style="margin-left:2em">
             <button type="button" class="btn btn-success" (click)="appear('tests')">Tests</button>
         </div>
         

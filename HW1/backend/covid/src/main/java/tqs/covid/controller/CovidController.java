@@ -22,10 +22,9 @@ import tqs.covid.service.CovidService;
 @RequestMapping("/info/")
 public class CovidController {
 
-
     @Autowired
     private CovidService service;
-
+    
 
     @GetMapping("world")
     public CovidInfo getWorldData() throws IOException, InterruptedException {
