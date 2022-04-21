@@ -18,7 +18,7 @@ This application provides details about COVID-19 incidence data worldwide and fo
 
 ![demo gif](./media/demo.gif)
 
-full demonstration [here](https://www.youtube.com/watch?v=w-xc9dv0mkA)
+>> Full demonstration [here](https://www.youtube.com/watch?v=w-xc9dv0mkA)
 
 <br>
 
