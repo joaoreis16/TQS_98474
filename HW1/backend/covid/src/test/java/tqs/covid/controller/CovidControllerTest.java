@@ -28,13 +28,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(CovidController.class)
 public class CovidControllerTest {
 
-
     @Autowired
     private MockMvc mvc;
 
     @MockBean
     private CovidService service;
-
 
     @Test
     void getWorldDataTest() throws Exception {
@@ -53,9 +51,7 @@ public class CovidControllerTest {
         );
             
         verify(service, times(1)).getWorldData();
-
     }
-
 
     @Test
     void getCountryData() throws Exception {

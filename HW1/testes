@@ -1,6 +1,0 @@
-
-
-
-D) Functional testing (on the web interface). Be sure to adopt a Behavior-driven approach (features with scenarios).
-
-E) Integration of analysis with Sonar Qube(or Codacy). Note: If the Git project is public, it can be analyzed in SonarCloud.

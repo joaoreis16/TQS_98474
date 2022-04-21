@@ -61,7 +61,7 @@ public class CacheTest {
     }
 
 
-    @DisplayName("3. Cache behaviour test")
+    @DisplayName("4. Cache behaviour test")
     @Test
     public void behaviourTest() {
         this.cache.add("um", "one");

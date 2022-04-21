@@ -32,7 +32,6 @@ export type ChartOptions = {
 })
 export class CountryComponent implements OnInit {
 
-  public not_equal : boolean = false; 
   public not_found : boolean = false; 
   public stats : LastSixMonths[] = [];
   public info_country : CovidInfo | undefined;
@@ -169,12 +168,12 @@ export class CountryComponent implements OnInit {
           this.stats = [];
 
         } else if (iso != data.iso) {
-          this.not_equal = true;
+          this.not_found = true
           this.info_country = undefined;
           this.stats = [];
 
         } else {
-          this.not_equal = false;
+          this.not_found = false;
           window.location.href = "/info/" + data.iso.toLowerCase();
         }
       });
