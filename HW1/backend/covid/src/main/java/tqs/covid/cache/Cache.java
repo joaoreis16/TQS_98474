@@ -17,7 +17,7 @@ public class Cache {
 
 
     public Cache() {
-        max_time = 100 * 1000;
+        max_time = (long) 100 * 1000;
         cache = new HashMap<>();
         time2live = new HashMap<>();
     }
