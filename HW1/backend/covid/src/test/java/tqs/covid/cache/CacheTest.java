@@ -27,8 +27,8 @@ public class CacheTest {
     public void addTest() {
         this.cache.add("um", "one");
 
-        assertEquals( this.cache.get("um"), "one");
-        assertEquals( this.cache.size(), 1);
+        assertEquals( "one", this.cache.get("um"));
+        assertEquals( 1, this.cache.size());
     }
     
 
@@ -37,10 +37,10 @@ public class CacheTest {
     public void cleanTest() {
         this.cache.add("um", "one");
         this.cache.add("dois", "two");
-        assertEquals( this.cache.size(), 2);
+        assertEquals( 2, this.cache.size());
 
         this.cache.clean("um");
-        assertEquals( this.cache.size(), 1);
+        assertEquals( 1, this.cache.size() );
         assertFalse( this.cache.clean("um") );        
     }
 
@@ -51,13 +51,13 @@ public class CacheTest {
         this.cache.add("um", "one");
         this.cache.add("dois", "two");
 
-        assertEquals( this.cache.get("dois"), "two");      // requests = 1 | misses = 0 | hits = 1
-        assertNotEquals( this.cache.get("um"), "two");     // requests = 2 | misses = 0 | hits = 2
-        assertEquals( this.cache.get("três"), null );      // requests = 3 | misses = 1 | hits = 2
+        assertEquals( "two", this.cache.get("dois") );              // requests = 1 | misses = 0 | hits = 1
+        assertNotEquals( "two", this.cache.get("um") );           // requests = 2 | misses = 0 | hits = 2
+        assertEquals( null, this.cache.get("três") );               // requests = 3 | misses = 1 | hits = 2
 
-        assertEquals( this.cache.getRequests(), 3); 
-        assertEquals( this.cache.getHits(), 2);   
-        assertEquals( this.cache.getMisses(), 1);   
+        assertEquals( 3, this.cache.getRequests() ); 
+        assertEquals( 2, this.cache.getHits() );   
+        assertEquals( 1, this.cache.getMisses() );   
     }
 
 
@@ -67,17 +67,17 @@ public class CacheTest {
         this.cache.add("um", "one");
         this.cache.add("dois", "two");
 
-        assertEquals( this.cache.size(), 2);
-        assertEquals( this.cache.get("dois"), "two");
+        assertEquals( 2, this.cache.size() );
+        assertEquals( "two", this.cache.get("dois") );
 
         try {
             Thread.sleep(3000); // sleep 3 seconds
 
+            assertEquals( 0, this.cache.size() );
+            assertEquals( null, this.cache.get("dois") );
+            
         } catch(InterruptedException e) {
             System.out.println("got interrupted!");
         }
-
-        assertEquals( this.cache.size(), 0);
-        assertEquals( this.cache.get("dois"), null);
     }
 }
